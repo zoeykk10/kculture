@@ -30,63 +30,75 @@ export default async function PostPage({ params }: { params: Params }) {
 
   return (
     <article>
-      {/* Header with gradient */}
+      {/* Article header with gradient */}
       <div
-        className="py-16 px-4 text-white"
+        className="py-20 px-6 text-white"
         style={{ background: post.frontmatter.headerGradient }}
       >
-        <div className="max-w-2xl mx-auto">
-          <div className="text-sm mb-4 opacity-70">
-            {post.frontmatter.category} · {post.frontmatter.readTime}
+        <div className="max-w-3xl mx-auto">
+          <div className="flex items-center gap-4 mb-6">
+            <span className="text-[10px] font-label uppercase tracking-[0.3em] opacity-70">
+              {post.frontmatter.category}
+            </span>
+            <span className="text-[10px] font-label uppercase tracking-[0.3em] opacity-50">·</span>
+            <span className="text-[10px] font-label uppercase tracking-[0.3em] opacity-70">
+              {post.frontmatter.readTime}
+            </span>
           </div>
-          <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-6">
+          <h1 className="text-4xl md:text-5xl font-headline font-bold leading-[1.1] tracking-tight mb-8">
             {post.frontmatter.title}
           </h1>
-          <p className="border-l-2 border-white/40 pl-4 italic opacity-75 text-lg">
+          <p className="border-l-2 border-white/30 pl-5 italic opacity-70 text-lg font-light leading-relaxed">
             &ldquo;{post.frontmatter.pullQuote}&rdquo;
           </p>
         </div>
       </div>
 
       {/* Language toggle */}
-      <div className="bg-gray-50 border-b py-2 px-4">
-        <div className="max-w-2xl mx-auto flex gap-4 text-sm">
+      <div className="bg-[#f0eee9] py-3 px-6">
+        <div className="max-w-3xl mx-auto flex gap-5 font-label text-xs uppercase tracking-widest">
           {locale === 'ko' ? (
-            <span className="font-semibold text-gray-900">한국어</span>
+            <span className="font-semibold text-[#1b1c19]">한국어</span>
           ) : (
-            <Link href={`/ko/hub/${post.frontmatter.hreflangSlug}`} className="text-gray-400 hover:text-gray-700">
+            <Link href={`/ko/hub/${post.frontmatter.hreflangSlug}`} className="text-[#777871] hover:text-[#1b1c19] transition-colors">
               한국어
             </Link>
           )}
           {locale === 'en' ? (
-            <span className="font-semibold text-gray-900">English</span>
+            <span className="font-semibold text-[#1b1c19]">English</span>
           ) : (
-            <Link href={`/en/hub/${post.frontmatter.hreflangSlug}`} className="text-gray-400 hover:text-gray-700">
+            <Link href={`/en/hub/${post.frontmatter.hreflangSlug}`} className="text-[#777871] hover:text-[#1b1c19] transition-colors">
               English
             </Link>
           )}
         </div>
       </div>
 
-      {/* MDX Content */}
-      <div className="max-w-2xl mx-auto px-4 py-10">
-        <div className="prose prose-gray prose-lg max-w-none
-          prose-headings:font-semibold
-          prose-h2:text-xl prose-h2:mt-10 prose-h2:mb-4
-          prose-p:leading-relaxed prose-p:text-gray-700
-          prose-ul:my-4 prose-li:my-1
-          prose-blockquote:not-italic prose-blockquote:border-l-4 prose-blockquote:border-gray-300 prose-blockquote:bg-gray-50 prose-blockquote:py-4 prose-blockquote:px-5 prose-blockquote:rounded-r-lg
-          prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline
-          prose-hr:my-8
-          prose-strong:text-gray-900
+      {/* MDX body */}
+      <div className="max-w-3xl mx-auto px-6 py-14">
+        <div className="prose max-w-none
+          prose-headings:font-headline prose-headings:font-bold prose-headings:text-[#1b1c19] prose-headings:tracking-tight
+          prose-h2:text-2xl prose-h2:mt-14 prose-h2:mb-5
+          prose-p:text-[#464742] prose-p:leading-[1.85] prose-p:font-light
+          prose-ul:my-5 prose-li:my-2 prose-li:text-[#464742] prose-li:font-light
+          prose-strong:text-[#1b1c19] prose-strong:font-semibold
+          prose-a:text-[#b91d20] prose-a:no-underline hover:prose-a:underline
+          prose-blockquote:not-italic prose-blockquote:border-l-[3px] prose-blockquote:border-[#b91d20]/30 prose-blockquote:bg-[#f0eee9] prose-blockquote:py-5 prose-blockquote:px-6 prose-blockquote:my-8
+          prose-hr:border-[#c7c7bf]/40 prose-hr:my-10
         ">
           <MDXRemote source={post.content} />
         </div>
 
-        <div className="mt-12 pt-8 border-t text-center">
-          <Link href={`/${locale}`} className="text-sm text-gray-400 hover:text-gray-700">
-            {locale === 'ko' ? '← 전체 글 보기' : '← All posts'}
+        <div className="mt-16 pt-10 flex items-center justify-between">
+          <Link
+            href={`/${locale}`}
+            className="font-label text-xs uppercase tracking-widest text-[#777871] hover:text-[#1b1c19] transition-colors"
+          >
+            ← {locale === 'ko' ? '전체 글' : 'All posts'}
           </Link>
+          <span className="font-label text-[10px] uppercase tracking-widest text-[#c7c7bf]">
+            {post.frontmatter.publishedAt}
+          </span>
         </div>
       </div>
     </article>

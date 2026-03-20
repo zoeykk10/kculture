@@ -19,7 +19,7 @@ export default async function LocaleLayout({
   return (
     <>
       <Header locale={locale as 'ko' | 'en'} />
-      <main className="min-h-screen">{children}</main>
+      <main className="pt-16 pb-24 md:pb-0 min-h-screen">{children}</main>
       <Footer locale={locale as 'ko' | 'en'} />
     </>
   );

@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "Bash(node -e \"const p = require\\(''./package.json''\\); console.log\\(''next:'', p.dependencies.next, ''\\\\nnext-intl:'', p.dependencies[''next-intl'']\\)\")",
+      "Bash(node -e \"const p = require\\(''./package.json''\\); console.log\\(''next-mdx-remote:'', p.dependencies[''next-mdx-remote'']\\)\")"
     ]
   }
 }
