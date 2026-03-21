@@ -15,7 +15,7 @@ export default function Footer({ locale }: FooterProps) {
       <footer className="w-full py-10 px-6 mt-16 bg-stone-100 border-t border-stone-200">
         <div className="max-w-7xl mx-auto flex flex-col items-center gap-6 md:flex-row md:justify-between">
           <div className="text-stone-900 font-bold tracking-widest font-headline text-xs uppercase">
-            Seoul Curator
+            All About K-Vibe
           </div>
           <div className="flex flex-wrap justify-center gap-6 md:gap-8">
             {['About', 'Curators', 'Terms', 'Contact'].map((item) => (
@@ -29,7 +29,7 @@ export default function Footer({ locale }: FooterProps) {
             ))}
           </div>
           <div className="text-stone-400 font-label text-[10px] tracking-tighter uppercase text-center">
-            © 2026 Seoul Curator. All rights reserved.
+            © 2024 All About K-Vibe. Archiving Korean Modernity.
           </div>
         </div>
       </footer>

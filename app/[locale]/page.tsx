@@ -39,9 +39,9 @@ export default async function HomePage({ params }: { params: Params }) {
         <div className="w-full h-[618px] md:h-[663px] relative overflow-hidden bg-[#f4f4f2]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqqEh4qRXgMZg8J7j2adgVT6mIf6Fi-3NRZDTm8cEecu3qNGsNR-Jr0aBfO7fSoLJOIXLdJ36W-orWgCJNWuZLFI4xlXCagERk4zOzkthuiTGs5zBdmnKf5lGZqZA8DwrQ5RK9oWctPneXaxzrPj4J9hz4hQyOAf-MW23BEBcV_7Cen2JP38wjZA7dV7oSo9p_oxmVhS-xuu9P7AB8HnTJANnvxlACLQ5n3k3nFkTK7WZt02vClqzaS1Nam7hEm08gW0ecSzffX64"
-            alt="Minimalist Seoul architectural detail"
-            className="w-full h-full object-cover grayscale contrast-125 opacity-90 hover:opacity-100 transition-opacity duration-700"
+            src="https://lh3.googleusercontent.com/aida/ADBb0ugkd4rqi3adjDGLESR1fk5c_HM3n5tUxiGIDpy0gFpQwcHXCRcEd6tnNjdUoM3Nz9kOF41VIYlofqifhmdY6RWZ0a3c9csepCOa2NPjvworFy7wufX759AgW8C8onisPp5WdB9cwOF3PhviecX1E5vuwTGxxSvCcPeZqcnR1cDkUC9fqncRtWRxVE7Nzh8GrradtJggWBhIwcyPvMGb79dUp-HmzxZENmICAW0avoJhVBYSGnSlX7WPjCx_mbzYaP5km3gDALtndw"
+            alt="All About K-Vibe illustration"
+            className="w-full h-full object-cover transition-opacity duration-700"
           />
         </div>
       </section>
@@ -76,7 +76,7 @@ export default async function HomePage({ params }: { params: Params }) {
               </>
             ) : (
               <>
-                Seoul Curator exists as a digital archive for the discerning eye, documenting the
+                All About K-Vibe exists as a digital archive for the discerning eye, documenting the
                 delicate intersection of{' '}
                 <span className="text-[#00342b] font-medium">Korean modernity</span> and ancestral
                 heritage. We seek out the quiet architectural voids, the intentional gastronomy, and

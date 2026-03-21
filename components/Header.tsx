@@ -6,7 +6,7 @@ interface HeaderProps {
 
 export default function Header({ locale }: HeaderProps) {
   return (
-    <header className="fixed top-0 left-0 w-full flex justify-between items-center px-4 sm:px-6 py-3 sm:py-4 bg-[#fbf9f4]/80 backdrop-blur-lg z-50 shadow-[0_8px_30px_rgb(27,28,25,0.04)]">
+    <header className="fixed top-0 left-0 w-full flex justify-between items-center px-4 sm:px-6 py-3 sm:py-4 bg-[#f4f4f2]/80 backdrop-blur-lg z-50 shadow-[0_8px_30px_rgb(27,28,25,0.04)]">
       <div className="flex items-center gap-3 sm:gap-4 min-w-0">
         <button className="text-[#1b1c19] hover:opacity-60 transition-opacity shrink-0" aria-label="menu">
           <span className="material-symbols-outlined text-[22px]">menu</span>
@@ -15,7 +15,7 @@ export default function Header({ locale }: HeaderProps) {
           href={`/${locale}`}
           className="text-sm sm:text-base font-extrabold tracking-[0.15em] sm:tracking-[0.2em] text-[#1b1c19] uppercase font-headline truncate"
         >
-          SEOUL CURATOR
+          ALL ABOUT K-VIBE
         </Link>
       </div>
       <div className="flex items-center gap-3 sm:gap-5 shrink-0">
