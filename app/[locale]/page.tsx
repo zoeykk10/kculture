@@ -39,7 +39,7 @@ export default async function HomePage({ params }: { params: Params }) {
         <div className="w-full h-[618px] md:h-[663px] relative overflow-hidden bg-[#f4f4f2]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="https://lh3.googleusercontent.com/aida/ADBb0ugkd4rqi3adjDGLESR1fk5c_HM3n5tUxiGIDpy0gFpQwcHXCRcEd6tnNjdUoM3Nz9kOF41VIYlofqifhmdY6RWZ0a3c9csepCOa2NPjvworFy7wufX759AgW8C8onisPp5WdB9cwOF3PhviecX1E5vuwTGxxSvCcPeZqcnR1cDkUC9fqncRtWRxVE7Nzh8GrradtJggWBhIwcyPvMGb79dUp-HmzxZENmICAW0avoJhVBYSGnSlX7WPjCx_mbzYaP5km3gDALtndw"
+            src="/images/main-hero.webp"
             alt="All About K-Vibe illustration"
             className="w-full h-full object-cover transition-opacity duration-700"
           />
