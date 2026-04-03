@@ -4,6 +4,43 @@ import { getPost, getAllSlugs } from '@/lib/posts';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
+function RelatedPanel({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="not-prose mt-10 pt-8 border-t border-[#c7c7bf]/40 space-y-3">
+      {children}
+    </div>
+  );
+}
+
+function PanelItem({
+  label,
+  slug,
+  lang,
+  children,
+}: {
+  type?: string;
+  label: string;
+  slug: string;
+  lang: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="flex items-baseline gap-3">
+      <span className="shrink-0 font-label text-[10px] uppercase tracking-widest text-[#777871]">
+        {label}
+      </span>
+      <Link
+        href={`/${lang}/hub/${slug}`}
+        className="text-[#b91d20] text-sm font-light hover:underline"
+      >
+        {children}
+      </Link>
+    </div>
+  );
+}
+
+const mdxComponents = { RelatedPanel, PanelItem };
+
 type Params = Promise<{ locale: string; slug: string }>;
 
 export async function generateStaticParams() {
@@ -86,7 +123,7 @@ export default async function PostPage({ params }: { params: Params }) {
           prose-blockquote:not-italic prose-blockquote:border-l-[3px] prose-blockquote:border-[#b91d20]/30 prose-blockquote:bg-[#f0eee9] prose-blockquote:py-4 prose-blockquote:px-4 sm:prose-blockquote:px-6 prose-blockquote:my-6 sm:prose-blockquote:my-8
           prose-hr:border-[#c7c7bf]/40 prose-hr:my-8 sm:prose-hr:my-10
         ">
-          <MDXRemote source={post.content} />
+          <MDXRemote source={post.content} components={mdxComponents} />
         </div>
 
         <div className="mt-12 sm:mt-16 pt-8 sm:pt-10 flex items-center justify-between border-t border-[#c7c7bf]/30">
